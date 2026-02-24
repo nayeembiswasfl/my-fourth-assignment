@@ -4,30 +4,30 @@ let currentTab = "all"
 
 function updateCounts() {
 
-const jobs = document.querySelectorAll(".job")
+    const jobs = document.querySelectorAll(".job")
 
-const totalCount = document.getElementById("totalCount")
-const interviewCount = document.getElementById("interviewCount")
-const rejectedCount = document.getElementById("rejectedCount")
+    const totalCount = document.getElementById("totalCount")
+    const interviewCount = document.getElementById("interviewCount")
+    const rejectedCount = document.getElementById("rejectedCount")
 
-let interview = 0
-let rejected = 0
+    let interview = 0
+    let rejected = 0
 
-jobs.forEach(job => {
+    jobs.forEach(job => {
 
-if (job.dataset.status === "interview") {
-interview++
-}
+        if (job.dataset.status === "interview") {
+            interview++
+        }
 
-if (job.dataset.status === "rejected") {
-rejected++
-}
+        if (job.dataset.status === "rejected") {
+            rejected++
+        }
 
-})
+    })
 
-totalCount.textContent = jobs.length
-interviewCount.textContent = interview
-rejectedCount.textContent = rejected
+    totalCount.textContent = jobs.length
+    interviewCount.textContent = interview
+    rejectedCount.textContent = rejected
 
 }
 
@@ -35,62 +35,62 @@ rejectedCount.textContent = rejected
 
 function filterJobs() {
 
-const jobs = document.querySelectorAll(".job")
-const emptyState = document.getElementById("emptyState")
-const jobNumber = document.getElementById("jobNumber")
+    const jobs = document.querySelectorAll(".job")
+    const emptyState = document.getElementById("emptyState")
+    const jobNumber = document.getElementById("jobNumber")
 
-let visible = 0
-let total = jobs.length
+    let visible = 0
+    let total = jobs.length
 
-jobs.forEach(job => {
+    jobs.forEach(job => {
 
-const status = job.dataset.status
+        const status = job.dataset.status
 
-if (currentTab === "all") {
+        if (currentTab === "all") {
 
-job.style.display = ""
-visible++
+            job.style.display = ""
+            visible++
 
-}
+        }
 
-else if (status === currentTab) {
+        else if (status === currentTab) {
 
-job.style.display = ""
-visible++
+            job.style.display = ""
+            visible++
 
-}
+        }
 
-else {
+        else {
 
-job.style.display = "none"
+            job.style.display = "none"
 
-}
+        }
 
-})
+    })
 
-if (visible === total) {
+    if (visible === total) {
 
-jobNumber.textContent = `${total} jobs`
+        jobNumber.textContent = `${total} jobs`
 
-}
+    }
 
-else {
+    else {
 
-jobNumber.textContent = `${visible} of ${total} jobs`
+        jobNumber.textContent = `${visible} of ${total} jobs`
 
-}
+    }
 
-if (visible === 0) {
+    if (visible === 0) {
 
-emptyState.classList.remove("hidden")
+        emptyState.classList.remove("hidden")
 
-}
+    }
 
-else {
+    else {
 
-emptyState.classList.add("hidden")
+        emptyState.classList.add("hidden")
 
-}
+    }
 
 }
 
@@ -98,84 +98,83 @@ emptyState.classList.add("hidden")
 
 function setupTabs() {
 
-const tabs = document.querySelectorAll(".tab")
+   const tabs = document.querySelectorAll(".tab-btn")
 
 tabs.forEach(tab => {
 
-tab.addEventListener("click", () => {
+    tab.addEventListener("click", function () {
 
-tabs.forEach(t => t.classList.remove("tab-active"))
+        tabs.forEach(t => t.classList.remove("active"))
 
-tab.classList.add("tab-active")
+        tab.classList.add("active")
 
-currentTab = tab.dataset.tab
+        currentTab = tab.dataset.tab
 
-filterJobs()
+        filterJobs()
+
+    })
 
 })
-
-})
-
 }
 
 
 
 function handleButtons() {
 
-document.addEventListener("click", function (e) {
+    document.addEventListener("click", function (e) {
 
-const interviewBtn = e.target.closest(".interview")
-const rejectedBtn = e.target.closest(".rejected")
-const deleteBtn = e.target.closest(".delete")
-
-
-
-if (interviewBtn) {
-
-const card = interviewBtn.closest(".job")
-const badge = card.querySelector(".statusBadge")
-
-card.dataset.status = "interview"
-
-badge.textContent = "INTERVIEW"
-badge.className = "badge badge-success badge-outline badge-sm uppercase statusBadge"
-
-updateCounts()
-filterJobs()
-
-}
+        const interviewBtn = e.target.closest(".interview")
+        const rejectedBtn = e.target.closest(".rejected")
+        const deleteBtn = e.target.closest(".delete")
 
 
 
-if (rejectedBtn) {
+        if (interviewBtn) {
 
-const card = rejectedBtn.closest(".job")
-const badge = card.querySelector(".statusBadge")
+            const card = interviewBtn.closest(".job")
+            const badge = card.querySelector(".statusBadge")
 
-card.dataset.status = "rejected"
+            card.dataset.status = "interview"
 
-badge.textContent = "REJECTED"
-badge.className = "badge badge-error badge-outline badge-sm uppercase statusBadge"
+            badge.textContent = "INTERVIEW"
+            badge.className = "badge badge-success badge-outline badge-sm uppercase statusBadge"
 
-updateCounts()
-filterJobs()
+            updateCounts()
+            filterJobs()
 
-}
+        }
 
 
 
-if (deleteBtn) {
+        if (rejectedBtn) {
 
-const card = deleteBtn.closest(".job")
+            const card = rejectedBtn.closest(".job")
+            const badge = card.querySelector(".statusBadge")
 
-card.remove()
+            card.dataset.status = "rejected"
 
-updateCounts()
-filterJobs()
+            badge.textContent = "REJECTED"
+            badge.className = "badge badge-error badge-outline badge-sm uppercase statusBadge"
 
-}
+            updateCounts()
+            filterJobs()
 
-})
+        }
+
+
+
+        if (deleteBtn) {
+
+            const card = deleteBtn.closest(".job")
+
+            card.remove()
+
+            updateCounts()
+            filterJobs()
+
+        }
+
+    })
 
 }
 
@@ -183,10 +182,10 @@ filterJobs()
 
 function initApp() {
 
-setupTabs()
-handleButtons()
-updateCounts()
-filterJobs()
+    setupTabs()
+    handleButtons()
+    updateCounts()
+    filterJobs()
 
 }
 
