@@ -98,23 +98,24 @@ function filterJobs() {
 
 function setupTabs() {
 
-   const tabs = document.querySelectorAll(".tab-btn")
+    const tabs = document.querySelectorAll(".tab-btn")
 
-tabs.forEach(tab => {
+    tabs.forEach(tab => {
 
-    tab.addEventListener("click", function () {
+        tab.addEventListener("click", () => {
 
-        tabs.forEach(t => t.classList.remove("active"))
+            tabs.forEach(t => t.classList.remove("tab-active"))
 
-        tab.classList.add("active")
+            tab.classList.add("tab-active")
 
-        currentTab = tab.dataset.tab
+            currentTab = tab.dataset.tab
 
-        filterJobs()
+            filterJobs()
+
+        })
 
     })
 
-})
 }
 
 
