@@ -166,7 +166,7 @@ function updateDashboard() {
 }
 
 
-// intial page load
+// initial page load
 
 updateDashboard()
 filterJobs()

@@ -1,6 +1,8 @@
-                                    Answer To The Question No 01 
+                                    
 
-1. Difference between getElementById, getElementsByClassName, querySelector and querySelectorAll
+1. Difference between getElementById, getElementsByClassName, querySelector and querySelectorAll ?
+
+                                    Answer To The Question No 01 
 
 getElementById is used to select one element by its id. Since id is unique, it always gives only one element.
 
@@ -15,8 +17,10 @@ So the main difference is how many elements they return and how flexible they ar
 
 
 
-                                 Answer To The Question No 02 
-2. How to create and insert a new element into the DOM
+                                 
+2. How to create and insert a new element into the DOM?
+
+                                Answer To The Question No 02 
 
 First we create a new element using JavaScript. Then we can add text or class to that element. After that, we insert it into the DOM inside a parent element like body or div.
 
@@ -25,9 +29,11 @@ So the steps are simple: create the element, modify it, and then add it to the p
 
 
 
-                                 Answer To The Question No 03 
+                                 
 
 3. What is Event Bubbling? And how does it work?
+
+                                    Answer To The Question No 03 
 
 Event bubbling means when an event happens on a child element, it does not stop there. It goes up to its parent element, then to grandparent, and continues like that.
 
@@ -37,9 +43,11 @@ So the event moves from inner element to outer element.
 
 
 
-                                 Answer To The Question No 04 
+                                 
 
 4. What is Event Delegation in JavaScript? Why is it useful?
+
+                                    Answer To The Question No 04 
 
 Event delegation means we add event listener to a parent element instead of adding to every child element.
 
@@ -49,9 +57,11 @@ It is useful because it saves memory, improves performance, and also works for e
 
 
 
-                                 Answer To The Question No 05 
+                                
 
-5. Difference between preventDefault() and stopPropagation()
+5. Difference between preventDefault() and stopPropagation()?
+
+                                                 Answer To The Question No 05 
 
 preventDefault() stops the default action of an element. For example, it can stop a form from submitting or a link from opening.
 
