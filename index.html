@@ -23,23 +23,45 @@
             font-family: "Geist", sans-serif;
         }
 
-     .tab-btn{
-padding:6px 14px;
-font-size:14px;
-border-radius:6px;
-color:#475569;
-background:#f1f5f9;
-transition:0.2s;
-}
+        .tab-btn {
+            padding: 6px 14px;
+            font-size: 14px;
+            border-radius: 6px;
+            color: #475569;
+            background: #f1f5f9;
+            transition: 0.2s;
+        }
 
-.tab-btn:hover{
-background:#e2e8f0;
-}
+        .tab-btn:hover {
+            background: #e2e8f0;
+        }
 
-.tab-btn.active{
-background:#3b82f6;
-color:white;
-}
+        .tab-btn.active {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .interview {
+            transition: all 0.2s ease;
+        }
+
+        .interview:hover {
+            background: #16a34a;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .rejected {
+            transition: all 0.2s ease;
+        }
+
+        .rejected:hover {
+            background: #ef4444;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
     </style>
 
 </head>
@@ -90,33 +112,24 @@ color:white;
         </div>
 
         <!-- Tabs -->
-      <div class="flex gap-2 mb-6">
+        <div class="flex gap-2 mb-6">
 
-    <!-- All -->
-    <button
-        class="tab-btn active"
-        data-tab="all"
-    >
-        All
-    </button>
+            <!-- All -->
+            <button class="tab-btn active" data-tab="all">
+                All
+            </button>
 
-    <!-- Interview -->
-    <button
-        class="tab-btn"
-        data-tab="interview"
-    >
-        Interview
-    </button>
+            <!-- Interview -->
+            <button class="tab-btn" data-tab="interview">
+                Interview
+            </button>
 
-    <!-- Rejected -->
-    <button
-        class="tab-btn"
-        data-tab="rejected"
-    >
-        Rejected
-    </button>
+            <!-- Rejected -->
+            <button class="tab-btn" data-tab="rejected">
+                Rejected
+            </button>
 
-</div>
+        </div>
         <!-- Jobs -->
 
         <div id="jobsContainer" class="grid gap-6">
@@ -124,345 +137,345 @@ color:white;
             <!-- Card 1 -->
 
 
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
 
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5 opacity-70 hover:opacity-100">
-</button>
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5 opacity-70 hover:opacity-100">
+                </button>
 
-<h3 class="font-semibold text-lg">Ministry of Health</h3>
+                <h3 class="font-semibold text-lg">Ministry of Health</h3>
 
-<p class="text-gray-600 text-sm mb-2">
-Public Health Officer
-</p>
+                <p class="text-gray-600 text-sm mb-2">
+                    Public Health Officer
+                </p>
 
-<p class="text-gray-500 text-sm mb-3">
-Dhaka • Government • ৳45,000 - ৳60,000
-</p>
+                <p class="text-gray-500 text-sm mb-3">
+                    Dhaka • Government • ৳45,000 - ৳60,000
+                </p>
 
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
 
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Coordinate community health programs and support public health initiatives across urban areas.
-</p>
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Coordinate community health programs and support public health initiatives across urban areas.
+                </p>
 
-<div class="flex gap-3">
+                <div class="flex gap-3">
 
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
 
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
 
-</div>
+                </div>
 
-</div>
-
-<!-- Card 2 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">BRAC</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Field Program Coordinator
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Khulna • NGO • ৳35,000 - ৳50,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Manage community education programs and coordinate volunteers for development projects.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-<!-- Card 3 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">Bangladesh Army</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Logistics Officer
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Chattogram Cantonment • Defense • ৳50,000 - ৳70,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Oversee supply chain operations and manage equipment distribution within military units.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-<!-- Card 4 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">Dhaka City Corporation</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Urban Planning Assistant
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Dhaka • Government • ৳40,000 - ৳55,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Support city planning projects and help improve public infrastructure development.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-<!-- Card 5 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">Red Crescent Society</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Disaster Response Coordinator
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Barisal • NGO • ৳38,000 - ৳52,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Organize disaster relief activities and manage emergency response teams.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-<!-- Card 6 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">Bangladesh Railway</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Station Operations Manager
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Rajshahi • Government • ৳42,000 - ৳58,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Supervise daily railway station operations and ensure passenger service efficiency.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-<!-- Card 7 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">Save the Children</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Child Welfare Officer
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Rangpur • NGO • ৳36,000 - ৳48,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Work with rural communities to support children's education and safety programs.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-<!-- Card 8 -->
-
-<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
-
-<button class="absolute top-5 right-5 delete">
-<img src="./Trash.png" class="w-5">
-</button>
-
-<h3 class="font-semibold text-lg">Border Guard Bangladesh</h3>
-
-<p class="text-gray-600 text-sm mb-2">
-Security Operations Officer
-</p>
-
-<p class="text-gray-500 text-sm mb-3">
-Sylhet • Defense • ৳48,000 - ৳65,000
-</p>
-
-<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
-NOT APPLIED
-</span>
-
-<p class="text-gray-600 text-sm mt-4 mb-5">
-Monitor border security activities and coordinate field operations.
-</p>
-
-<div class="flex gap-3">
-
-<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
-INTERVIEW
-</button>
-
-<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
-REJECTED
-</button>
-
-</div>
-
-</div>
-
-        <!-- Empty State -->
-
-        <div id="emptyState" class="hidden text-center py-20">
-
-            <div class="flex justify-center mb-3">
-                <img src="./assignment_7959593 1.png">
             </div>
 
-            <h3 class="text-xl font-semibold">
-                No jobs available
-            </h3>
+            <!-- Card 2 -->
 
-            <p class="text-gray-500">
-                Check back soon for new job opportunities
-            </p>
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">BRAC</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Field Program Coordinator
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Khulna • NGO • ৳35,000 - ৳50,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Manage community education programs and coordinate volunteers for development projects.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">Bangladesh Army</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Logistics Officer
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Chattogram Cantonment • Defense • ৳50,000 - ৳70,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Oversee supply chain operations and manage equipment distribution within military units.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">Dhaka City Corporation</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Urban Planning Assistant
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Dhaka • Government • ৳40,000 - ৳55,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Support city planning projects and help improve public infrastructure development.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 5 -->
+
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">Red Crescent Society</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Disaster Response Coordinator
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Barisal • NGO • ৳38,000 - ৳52,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Organize disaster relief activities and manage emergency response teams.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 6 -->
+
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">Bangladesh Railway</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Station Operations Manager
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Rajshahi • Government • ৳42,000 - ৳58,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Supervise daily railway station operations and ensure passenger service efficiency.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 7 -->
+
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">Save the Children</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Child Welfare Officer
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Rangpur • NGO • ৳36,000 - ৳48,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Work with rural communities to support children's education and safety programs.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Card 8 -->
+
+            <div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+                <button class="absolute top-5 right-5 delete">
+                    <img src="./Trash.png" class="w-5">
+                </button>
+
+                <h3 class="font-semibold text-lg">Border Guard Bangladesh</h3>
+
+                <p class="text-gray-600 text-sm mb-2">
+                    Security Operations Officer
+                </p>
+
+                <p class="text-gray-500 text-sm mb-3">
+                    Sylhet • Defense • ৳48,000 - ৳65,000
+                </p>
+
+                <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+                    NOT APPLIED
+                </span>
+
+                <p class="text-gray-600 text-sm mt-4 mb-5">
+                    Monitor border security activities and coordinate field operations.
+                </p>
+
+                <div class="flex gap-3">
+
+                    <button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+                        INTERVIEW
+                    </button>
+
+                    <button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+                        REJECTED
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Empty State -->
+
+            <div id="emptyState" class="hidden text-center py-20">
+
+                <div class="flex justify-center mb-3">
+                    <img src="./assignment_7959593 1.png">
+                </div>
+
+                <h3 class="text-xl font-semibold">
+                    No jobs available
+                </h3>
+
+                <p class="text-gray-500">
+                    Check back soon for new job opportunities
+                </p>
+
+            </div>
 
         </div>
 
-    </div>
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 
 </body>
 

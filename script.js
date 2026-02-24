@@ -1,6 +1,5 @@
-// -----------------------------
+
 // SELECT ELEMENTS
-// -----------------------------
 
 const tabs = document.querySelectorAll(".tab-btn")
 const jobNumber = document.getElementById("jobNumber")
@@ -14,9 +13,9 @@ const emptyState = document.getElementById("emptyState")
 let currentTab = "all"
 
 
-// -----------------------------
+
 // TAB SWITCH
-// -----------------------------
+
 
 tabs.forEach(tab => {
 
@@ -34,9 +33,8 @@ tabs.forEach(tab => {
 })
 
 
-// -----------------------------
 // INTERVIEW BUTTON
-// -----------------------------
+
 
 document.querySelectorAll(".interview").forEach(button => {
 
@@ -56,9 +54,8 @@ document.querySelectorAll(".interview").forEach(button => {
 })
 
 
-// -----------------------------
 // REJECTED BUTTON
-// -----------------------------
+
 
 document.querySelectorAll(".rejected").forEach(button => {
 
@@ -78,9 +75,9 @@ document.querySelectorAll(".rejected").forEach(button => {
 })
 
 
-// -----------------------------
+
 // DELETE JOB
-// -----------------------------
+
 
 document.querySelectorAll(".delete").forEach(button => {
 
@@ -97,11 +94,11 @@ document.querySelectorAll(".delete").forEach(button => {
 })
 
 
-// -----------------------------
-// FILTER JOBS
-// -----------------------------
 
-function filterJobs(){
+// FILTER JOBS
+
+
+function filterJobs() {
 
     const allJobs = document.querySelectorAll(".job")
 
@@ -112,17 +109,17 @@ function filterJobs(){
 
         const status = job.dataset.status
 
-        if(currentTab === "all"){
+        if (currentTab === "all") {
             job.style.display = "block"
             visibleCount++
         }
 
-        else if(currentTab === status){
+        else if (currentTab === status) {
             job.style.display = "block"
             visibleCount++
         }
 
-        else{
+        else {
             job.style.display = "none"
         }
 
@@ -130,10 +127,10 @@ function filterJobs(){
 
     jobNumber.textContent = visibleCount + " of " + totalJobs + " jobs"
 
-    if(visibleCount === 0){
+    if (visibleCount === 0) {
         emptyState.classList.remove("hidden")
     }
-    else{
+    else {
         emptyState.classList.add("hidden")
     }
 
@@ -141,9 +138,9 @@ function filterJobs(){
 
 
 
+// Dashboard
 
-
-function updateDashboard(){
+function updateDashboard() {
 
     const allJobs = document.querySelectorAll(".job")
 
@@ -152,11 +149,11 @@ function updateDashboard(){
 
     allJobs.forEach(job => {
 
-        if(job.dataset.status === "interview"){
+        if (job.dataset.status === "interview") {
             interview++
         }
 
-        if(job.dataset.status === "rejected"){
+        if (job.dataset.status === "rejected") {
             rejected++
         }
 
