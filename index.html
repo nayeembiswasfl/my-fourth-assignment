@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Job Application Tracker</title>
+
+<link rel="shortcut icon" href="favicon-for-assignment.png" type="image/x-icon">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+*{
+font-family: "Geist", sans-serif;
+}
+.tab{
+background: transparent;
+color: #475569;
+transition: 0.2s;
+}
+
+.tab:hover{
+background: #e2e8f0;
+}
+
+.tab-active{
+background: #3b82f6;
+color: white;
+}
+</style>
+
+</head>
+
+<body class="bg-[#F8FAFC]">
+
+<div class="max-w-6xl mx-auto p-6">
+
+<!-- Title -->
+
+<h1 class="text-3xl font-bold mb-8">
+Job Application Tracker
+</h1>
+
+<!-- Dashboard -->
+
+<div class="grid md:grid-cols-3 gap-4 mb-8">
+
+<div class="bg-white p-5 rounded-xl border">
+<p class="text-gray-500 text-sm">Total</p>
+<h2 id="totalCount" class="text-3xl font-bold">8</h2>
+</div>
+
+<div class="bg-white p-5 rounded-xl border">
+<p class="text-gray-500 text-sm">Interview</p>
+<h2 id="interviewCount" class="text-3xl font-bold text-green-600">0</h2>
+</div>
+
+<div class="bg-white p-5 rounded-xl border">
+<p class="text-gray-500 text-sm">Rejected</p>
+<h2 id="rejectedCount" class="text-3xl font-bold text-red-500">0</h2>
+</div>
+
+</div>
+
+<!-- Header -->
+
+<div class="flex justify-between items-center mb-4">
+
+<h2 class="text-xl font-semibold">
+Available Jobs
+</h2>
+
+<p id="jobNumber" class="text-sm text-gray-500">
+8 jobs
+</p>
+
+</div>
+
+<!-- Tabs -->
+
+<div class="inline-flex bg-gray-100 p-1 rounded-lg mb-6">
+
+<button 
+class="tab tab-active px-4 py-1.5 text-sm font-medium rounded-md mr-2"
+data-tab="all">
+All
+</button>
+
+<button 
+class="tab px-4 py-1.5 text-sm font-medium rounded-md"
+data-tab="interview">
+Interview
+</button>
+
+<button 
+class="tab px-4 py-1.5 text-sm font-medium rounded-md"
+data-tab="rejected">
+Rejected
+</button>
+
+</div>
+
+<!-- Jobs -->
+
+<div id="jobsContainer" class="grid gap-6">
+
+<!-- Card 1 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5 opacity-70 hover:opacity-100">
+</button>
+
+<h3 class="font-semibold text-lg">Mobile First Corp</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+React Native Developer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+Remote • Full-time • $130,000 - $175,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Build cross-platform mobile applications using React Native.
+Work on products used by millions of users worldwide.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">WebFlow Agency</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+Web Designer & Developer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+Los Angeles, CA • Part-time • $80,000 - $120,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Create stunning web experiences for high-profile clients.
+Must have portfolio and experience with modern web design trends.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">DataViz Solutions</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+Data Visualization Specialist
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+Boston, MA • Full-time • $125,000 - $165,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Transform complex data into compelling visual dashboards.
+Strong analytical and frontend skills required.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 4 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">CloudFirst Inc</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+Backend Developer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+Seattle, WA • Full-time • $140,000 - $190,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Design and maintain scalable backend systems using Python and AWS.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 5 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">Innovation Labs</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+UI / UX Engineer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+Austin, TX • Full-time • $100,000 - $150,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Create beautiful user interfaces and improve product usability.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 6 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">MegaCorp Solutions</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+JavaScript Developer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+New York, NY • Full-time • $130,000 - $170,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Build enterprise applications with modern JavaScript frameworks.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 7 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">StartupXYZ</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+Full Stack Engineer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+Remote • Full-time • $120,000 - $160,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Join a fast-growing startup and build scalable platforms.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+<!-- Card 8 -->
+
+<div class="bg-white border rounded-xl p-6 relative job" data-status="not-applied">
+
+<button class="absolute top-5 right-5 delete">
+<img src="./Trash.png" class="w-5">
+</button>
+
+<h3 class="font-semibold text-lg">TechCorp Industries</h3>
+
+<p class="text-gray-600 text-sm mb-2">
+Senior Frontend Developer
+</p>
+
+<p class="text-gray-500 text-sm mb-3">
+San Francisco, CA • Full-time • $130,000 - $175,000
+</p>
+
+<span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded statusBadge">
+NOT APPLIED
+</span>
+
+<p class="text-gray-600 text-sm mt-4 mb-5">
+Build scalable web applications using React and TypeScript.
+</p>
+
+<div class="flex gap-3">
+
+<button class="border border-green-600 text-green-600 px-4 py-2 rounded text-sm interview">
+INTERVIEW
+</button>
+
+<button class="border border-red-500 text-red-500 px-4 py-2 rounded text-sm rejected">
+REJECTED
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Empty State -->
+
+<div id="emptyState" class="hidden text-center py-20">
+
+<div class="flex justify-center mb-3">
+<img src="./assignment_7959593 1.png">
+</div>
+
+<h3 class="text-xl font-semibold">
+No jobs available
+</h3>
+
+<p class="text-gray-500">
+Check back soon for new job opportunities
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
